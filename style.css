@@ -1,0 +1,101 @@
+==========================================================================
+Body / Header / Nav
+=====================================================================*/
+body{
+	background-image: url(img/hotel_beach.jpg);
+	background-size: 100%;
+  font-size: 16px;
+}
+
+.row{
+  margin: 0;
+  width: 100%;
+}
+
+header{
+  /*Why does padding-top here work to clear our white space above the header*/
+  padding-top: 1%;
+	background-color: rgba(0,0,0,.5);
+}
+
+nav{
+  width: 90%;
+  padding: 0;
+  margin: auto;
+}
+
+/*============================================================================
+List and Link styling
+===========================================================================*/
+a{
+	text-decoration: none;
+  color: #E2D15D;
+  text-align: center;
+}
+
+li{
+	display: inline;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+li:hover{
+  background-color: #050501;
+}
+
+a:hover{
+  color: #E8B121;
+}
+#menuOne{
+  color: white;
+  font-size: 1.1em;
+}
+
+#menuTwo{
+  color: #D2B848;
+  font-size: 1.5em;
+}
+
+/*This wrapper div is necessary because if we just use a "li > ul" 
+the pseudo class hover gets taken away when the mouse is moved, making the
+second pseudo class hover difficult to grab. In short the sub menu disappears
+too fucking quickly to get the second hover
+*/
+.wrapper{
+  display: inline;
+}
+
+ul > div > li > ul {
+  position: absolute;
+  display: none;
+  width: inherit;
+}
+ul:hover > div >li > ul {
+  display: block;
+}
+
+/*============================================================================
+Style Sub Menus static, and hover
+===========================================================================*/
+#accUl{
+  opacity: .9;
+  list-style: none;
+  font-size: 1rem;
+  padding-top: 1%;
+  margin-left: 4%;
+  padding-right: 4%;
+}
+
+.accLi{
+  display: list-item;
+  background-color: #747975;
+  list-style: none;
+}
+
+.accLi:hover{
+  background-color: #D5BE46;
+}
+
+.accLi:hover > a{
+  color: black;
+}
