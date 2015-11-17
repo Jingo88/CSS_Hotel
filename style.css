@@ -1,8 +1,8 @@
-==========================================================================
+/*==========================================================================
 Body / Header / Nav
 =====================================================================*/
 body{
-	background-image: url(img/hotel_beach.jpg);
+	background-image: url("img/hotel_beach.jpg");
 	background-size: 100%;
   font-size: 16px;
 }
@@ -46,6 +46,8 @@ li:hover{
 a:hover{
   color: #E8B121;
 }
+
+/*Style both the menus a bit*/
 #menuOne{
   color: white;
   font-size: 1.1em;
@@ -56,39 +58,42 @@ a:hover{
   font-size: 1.5em;
 }
 
-/*This wrapper div is necessary because if we just use a "li > ul" 
-the pseudo class hover gets taken away when the mouse is moved, making the
-second pseudo class hover difficult to grab. In short the sub menu disappears
-too fucking quickly to get the second hover
-*/
-.wrapper{
-  display: inline;
-}
+/*Target the submenus to display none and block on hover
+We do it this way because on a website this scales to all the 
+list items with submenus*/
 
-ul > div > li > ul {
+ul > li > ul {
   position: absolute;
   display: none;
   width: inherit;
 }
-ul:hover > div >li > ul {
+
+li:hover > ul {
   display: block;
 }
 
 /*============================================================================
 Style Sub Menus static, and hover
-===========================================================================*/
-#accUl{
-  opacity: .9;
+========================================================================*/
+
+/*The below code has a negative margin but a positive padding top
+so I am able to jump from the accomodate hover to the sub menu hover.
+
+Without these two attributes the hovering would be difficult because
+the initial hover will deactivate on the movement of the mouse*/
+.accUl{
+  margin-top: -5px; 
+  padding-top: 10px;
+  position: absolute;
   list-style: none;
   font-size: 1rem;
-  padding-top: 1%;
   margin-left: 4%;
   padding-right: 4%;
 }
 
 .accLi{
   display: list-item;
-  background-color: #747975;
+  background-color: rgba(0,0,0,.5);
   list-style: none;
 }
 
